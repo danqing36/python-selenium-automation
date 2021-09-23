@@ -14,7 +14,7 @@ elem.clear()
 elem.send_keys('Cancel Order')
 elem.send_keys(Keys.RETURN)
 
-assert "Cancel Items or Orders" in driver.page_source
+assert "Cancel Items or Orders" in driver.page_source, f'Cancel Items or Orders text not present'
 
 driver.close()
 

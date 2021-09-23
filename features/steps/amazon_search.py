@@ -4,21 +4,10 @@ from time import sleep
 
 
 SEARCH_ORDERS = (By.ID, 'nav-orders')
-#SEARCH_SUBMIT = (By.NAME, 'btnK')
-
 
 @given('Open Amazon page')
 def open_amazon(context):
     context.driver.get('https://www.amazon.com/')
-
-
-#@when('Input {search_word} into search field')
-#def input_search(context, search_word):
-   # search = context.driver.find_element(*SEARCH_INPUT)
-   # search.clear()
-   # search.send_keys(search_word)
-   # sleep(4)
-
 
 @when('Click on orders icon')
 def click_orders_icon(context):
