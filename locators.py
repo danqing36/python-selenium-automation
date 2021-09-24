@@ -22,6 +22,10 @@ driver.find_element(By.ID, 'createAccountSubmit')
 
 #conditions of us link
 driver.find_element(By.XPATH, "//a[text()='Conditions of Use']")
+driver.find_element(By.XPATH, "//div[@id='legalTextRow']/a[text()='Conditions of Use']")
+
 
 #privacy notice link
 driver.find_element(By.XPATH, "//a[text()='Privacy Notice']")
+driver.find_element(By.XPATH, "//div[@id='legalTextRow']/a[contains(@href,'ap_signin_notification_privacy_notice')]")
+
