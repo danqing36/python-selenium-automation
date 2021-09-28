@@ -8,9 +8,11 @@ from selenium.webdriver.common.keys import Keys
 def open_amazon_help(context):
     context.driver.get('https://www.amazon.com/gp/help/customer/display.html')
 
+
 @when('Input {search_word} into search field and enter')
 def search_in_the_field(context, search_word):
     context.driver.find_element(By.ID,'helpsearch').send_keys(search_word, Keys.ENTER)
+
 
 @then('Verify cancel order are shown')
 def verify_tests_results(context):

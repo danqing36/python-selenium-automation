@@ -6,6 +6,7 @@ from time import sleep
 def click_cart_icon(context):
     context.driver.find_element(By.ID, 'nav-cart').click()
 
+
 @then('Verify cart is empty')
 def verify_cart_empty(context):
     actually_number = context.driver.find_element(By.ID, 'nav-cart-count').text

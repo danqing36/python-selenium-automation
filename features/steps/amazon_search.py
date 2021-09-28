@@ -9,6 +9,7 @@ SEARCH_ORDERS = (By.ID, 'nav-orders')
 def open_amazon(context):
     context.driver.get('https://www.amazon.com/')
 
+
 @when('Click on orders icon')
 def click_orders_icon(context):
     context.driver.find_element(*SEARCH_ORDERS).click()
