@@ -1,21 +1,28 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
-
 
 SEARCH_ORDERS = (By.ID, 'nav-orders')
 
 @given('Open Amazon page')
 def open_amazon(context):
-    context.driver.get('https://www.amazon.com/')
+    context.app.main_page.open_main_page()
 
 
 @when('Click on orders icon')
 def click_orders_icon(context):
-    context.driver.find_element(*SEARCH_ORDERS).click()
-    sleep(1)
+    context.app.main_page.click_orders()
 
 
-@then('{sign_in} page is opened')
-def verify_found_results_text(context, sign_in):
-    assert sign_in.lower() in context.driver.current_url.lower(), f"Expected query not in {context.driver.current_url.lower()}"
+@when('Click on cart icon')
+def click_cart_icon(context):
+    context.app.main_page.click_cart()
+
+
+@then('signin page is opened')
+def verify_found_results_text(context):
+    context.app.sign_in.verify_signin_page_open()
+
+@then('verify {info} text present')
+def verify_shopping_cart_empty(context, info):
+    context.app.main_page.verify_shopping_cart_empty(info)
+
