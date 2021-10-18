@@ -1,12 +1,13 @@
 # Created by fq at 9/27/21
 Feature: Test scenario for add products on to amazon cart
 
-  Scenario: User add the first product on the cart
+  Scenario: User can add a product to the cart
     Given Open Amazon page
-    When Search mug
+    When Input mug into amazon search
+    And Click on amazon search icon
     And Click the first product
-    And Save the product name
-    And Add the product to cart
+    And Store the product name
+    And Click on Add to cart button
     And Open cart page
+    Then Verify cart has correct product name
     Then Verify cart has 1 product
-    And Verify product name is correct
