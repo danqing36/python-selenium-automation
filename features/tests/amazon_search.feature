@@ -18,3 +18,8 @@ Feature: Test Scenarios for Amazon Search functionality
     And Input diapers into amazon search
     And Click on amazon search icon
     Then Verify Baby department is selected
+
+  Scenario: User can see new arrivals options
+    Given Open Amazon Product gp/product/B074TBCSC8 Page
+    When Hover over New Arrivals options
+    Then Verify 6 options present

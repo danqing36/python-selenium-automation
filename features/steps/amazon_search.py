@@ -43,3 +43,13 @@ def select_department(context, department_name):
 @then('Verify {department_name} department is selected')
 def verify_department_selected(context, department_name):
     context.app.search_results_page.verify_department_selected(department_name)
+
+
+@when('Hover over New Arrivals options')
+def hover_over_new_arrivals_option(context):
+    context.app.search_results_page.hover_over_new_arrivals_option()
+
+
+@then('Verify {number} options present')
+def verify_new_arrivals_options(context, number):
+    context.app.search_results_page.verify_new_arrivals_options(number)
